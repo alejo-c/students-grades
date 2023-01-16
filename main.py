@@ -27,14 +27,16 @@ def create_tables():
 			id INTEGER PRIMARY KEY AUTOINCREMENT,
 			student CHAR(3) NOT NULL,
 			subject CHAR(2) NOT NULL, 
-			value FLOAT NOT NULL
+			value FLOAT NOT NULL,
+            FOREIGN kEY (student) REFERENCES students(id),
+            FOREIGN kEY (subject) REFERENCES subject(id)
 		)'''
     )
     db.close()
 
 
 def main():
-    # create_tables()
+    create_tables()
     main_menu()
 
 
